@@ -1,0 +1,639 @@
+:root {
+    --color1: #ff6600;
+    --color2: #6b5b95;
+    --color3: #feb236;
+    --color4: #d64161;
+    --color5: #454140;
+    --color-basic1: #000000;
+    --color-basic2: #ffffff;
+    --bg-color1: #ffffff;
+    --bg-color2: #fff2e6;
+    --bg-color3: #ebcbb6;
+    --bg-color4: #D4E4F7;
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Общие стили */
+body {
+    font-family: var(--font-family);
+}
+
+h1 {
+    font-size: 3em;
+    color: var(--color-basic2);
+    margin-bottom: 30px;
+}
+span {
+    color: var(--color1);
+}
+
+h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    color: var(--color-basic1);
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var(--color-basic1);
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 18px;
+}
+
+/*buttons*/
+.btn1 {
+    background: var(--color1);
+    width: 14em;
+    margin: 20px auto;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: var(--color2);
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--color-basic2);
+    }
+}
+
+
+/* Общие стили для навигации */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: var(--bg-color1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Логотип */
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color1);
+}
+
+/* Список ссылок */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-right: 100px;
+    gap: 25px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-basic1);
+    font-size: 18px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    color: var(--color1);
+}
+
+/* Бургер-меню (скрыто по умолчанию) */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.burger span {
+    background: var(--color-basic1);
+    height: 3px;
+    width: 30px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+
+/*main - 1st section*/
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    padding: 50px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('images/bg2.jpeg') center/cover no-repeat;
+    text-align: center;
+}
+
+#main p {
+    color: var(--color-basic2);
+    line-height: 2em;
+}
+
+
+
+/*about - 2nd section*/
+#about {
+    width: 100%;
+    height: fit-content;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    text-align: center;
+    line-height: 25px;
+}
+.about-container {
+    max-width: 60rem;
+    color: var(--color5);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+/*icons - 3rd section*/
+#icons {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 80px 0;
+    background-color: var(--bg-color2);
+}
+
+.icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-between;
+    width: 80%;
+    gap: 5em;
+    text-align: center;
+}
+
+.icons-img {
+    width: 6rem;
+}
+
+.icons-box {
+    width: 20em;
+}
+
+.icons-title {
+    color: var(--color2);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 15px auto;
+}
+.icons-txt {
+    color: var(--color5);
+}
+
+
+
+
+/* Блок "Поделиться с друзьями" */
+#share {
+    position: relative;
+    text-align: center;
+    padding: 120px 20px;
+    color: var(--color-basic2);
+    background: url('images/cat-lick.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+}
+
+#share::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.share-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.share-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: var(--color1);
+}
+
+.share-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Кнопки соцсетей */
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.share-btn {
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-basic2);
+    transition: background 0.3s ease;
+}
+
+/* Стили кнопок */
+.facebook { background: #3b5998; }
+.instagram { 
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+}
+.telegram { background: #0088cc; }
+.whatsapp { background: #25d366; }
+
+.share-btn:hover {
+    opacity: 0.8;
+}
+
+/* info - 4th section*/
+#info {
+    background: var(--bg-color1);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.info-container {
+    width: 100%;
+    height: fit-content;
+    margin: 50px auto;
+}
+
+.info-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+/* Текст */
+.info-box-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+
+.info-box-txt h3 {
+    font-size: 28px;
+    text-transform: initial;
+    color: var(--color-basic1);
+    margin-bottom: 20px;
+}
+
+.info-box-txt p {
+    font-size: 18px;
+    color: var(--color5);
+    margin-bottom: 25px;
+}
+
+/* Картинка */
+.info-box-img-1 {
+    width: 100%;
+    height: 25rem;
+    background-color: var(--color4);
+    background: url('images/cat-royal.jpg') center/cover no-repeat;
+}
+
+.info-box-img-2 {
+    width: 100%;
+    height: 25rem;
+    background-color: var(--color4);
+    background: url('images/cat-paws.jpg') center/cover no-repeat;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+/* breeds*/
+.breeds {
+    height: fit-content;
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--bg-color2);
+}
+
+.breeds-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100rem;
+    gap: 20px;
+}
+
+.breed-image {
+    position: relative;
+    width: 26rem;
+    height: 26rem;
+    overflow: hidden;
+}
+
+.breed-image img {
+    width: 26rem;
+    height: 26rem;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.breed-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--color-basic2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    h4 {
+        margin: 10px 0;
+        color: var(--color1);
+        text-transform: uppercase;
+    }
+}
+
+.breed-image:hover .breed-info {
+    opacity: 1;
+}
+
+.breed-image:hover img {
+    transform: scale(1.1);
+}
+
+
+/* Контакты */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+}
+
+input, textarea {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Стили для красивого футера */
+footer {
+    background: var(--color1);
+    color: var(--color-basic2);
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    h3 {
+        color: var(--color-basic2);
+    }
+}
+
+
+/* Стили для формы */
+#contact {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#contact h2 {
+    color: var(--color1);
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    background: var(--bg-color1);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+input, textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid var(--color5);
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    background: var(--color1);
+    color: var(--color-basic2);
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: var(--color2);
+}
+
+/* Ссылки в футере */
+.footer-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--color-basic2);
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 0.7;
+}
+
+/* Социальные иконки */
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+}
+
+/* Копирайт */
+.footer-copy {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+
+
+
+
+/*gallery*/
+#gallery-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12rem 0;
+    background: var(--bg-color1);
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery-item {
+    width: 15em;
+    height: 15em;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Стиль кнопки "Показать больше" */
+#load-more {
+    cursor: pointer;
+    margin: 2rem auto;
+}
+
+#load-more:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+/* Используем иконку */
+#load-more::after {
+    content: url('icons/scroll.png');
+    display: block;
+    margin: 10px auto;
+    width: 30px; /* Размер иконки */
+    height: 30px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+/* Скролл-подсказка (анимированная) */
+.scroll-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #6b5b95;
+    animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
